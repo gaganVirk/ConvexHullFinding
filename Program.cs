@@ -18,18 +18,32 @@ namespace ConvexHullFinding
             List<Point> hull = new List<Point>();
             Point pivot = new Point(int.MaxValue, int.MaxValue);
 
-            int k = int.Parse(Console.ReadLine());
-            int n = int.Parse(Console.ReadLine());
-
-            for(int i = 0; i <= n; i++)
+            int times = 6;
+            while (times <= 6)
             {
-                string input = Console.ReadLine();
-                string[] vertices = input.Split(' ');
-                int v1 = int.Parse(vertices[0]);
-                int v2 = int.Parse(vertices[1]);
+                int k = int.Parse(Console.ReadLine());
+                int n = int.Parse(Console.ReadLine());
 
-                input = Console.ReadLine();
+                for (int i = 0; i < n; i++)
+                {
+                    string input = Console.ReadLine();
+                    string[] vertices = input.Split(' ');
+                    int v1 = int.Parse(vertices[0]);
+                    int v2 = int.Parse(vertices[1]);
+
+                    if (pivot.X > v1)
+                    {
+                        if (pivot.Y > v1)
+                        {
+                            pivot = new Point(v1, v2);
+                        }
+                    }
+                    points.Add(new Point(v1, v2));
+                }
             }
+
+            points.Sort(new Rad(pivot));
+            Console.WriteLine(pivot);
 
             bool isValidHull()
             {

@@ -15,15 +15,16 @@ namespace ConvexHullFinding
             this.a = a;
         }
 
-        public int CompareTo(Point b, Point c)
+        public int Compare(Point b, Point c)
         {
             int cw = a.X * b.Y - b.X * a.Y + b.X * c.Y - c.X * b.Y + c.X * a.Y - a.X * c.Y;
             if (cw == 0)
             {
                 double d1 = GetDistTo(b);
                 double d2 = GetDistTo(c);
+                return d1.CompareTo(d2);
             }
-            return d1.CompareTo(d2);
+            return cw;
         }
 
         public double GetDistTo(Point p)
