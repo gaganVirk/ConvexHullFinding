@@ -19,15 +19,18 @@ namespace ConvexHullFinding
             List<Point> hull = new List<Point>();
             Point pivot = new Point(int.MaxValue, int.MaxValue);
 
-            int dataSet = int.Parse(Console.ReadLine());
+            string line = Console.ReadLine();
+            int dataSet = int.Parse(line);
+
             for(int j = 0; j < dataSet; j++)
             {
+                line = Console.ReadLine();
                 int n = int.Parse(Console.ReadLine());
-
+                Console.WriteLine("N: {0}", n);
                 for (int i = 0; i < n; i++)
                 {
-                    string input = Console.ReadLine();
-                    string[] vertices = input.Split(' ');
+                    string[] vertices = line.Split(' ');
+
                     int v1 = int.Parse(vertices[0]);
                     int v2 = int.Parse(vertices[1]);
                     Console.WriteLine("V1: {0} V2: {1}", v1, v2);
@@ -40,10 +43,10 @@ namespace ConvexHullFinding
                     }
                     points.Add(new Point(v1, v2));
                 }
-                int neg = int.Parse(Console.ReadLine());
-                if(neg == -1)
+                string line = Console.ReadLine();
+                if(line == "-1")
                 {
-                    Console.WriteLine(neg);
+                    Console.WriteLine(line);
                 }
 
             }
