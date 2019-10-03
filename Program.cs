@@ -43,6 +43,9 @@ namespace ConvexHullFinding
                     }
                     points.Add(new Point(v1, v2));
                 }
+
+                pivot = LowestYThenLowestX(points);
+
                 string line = Console.ReadLine();
                 if(line == "-1")
                 {
@@ -72,7 +75,7 @@ namespace ConvexHullFinding
             Console.SetIn(stdIn);
             Console.ReadLine();
 
-            static Point LowestYThenLowestX(List<Point> points)
+            Point LowestYThenLowestX(List<Point> points)
             {
                 int lowestY = points.Min(m => m.Y);
                 var lowYs = points.Where(m => (m.Y == lowestY));
