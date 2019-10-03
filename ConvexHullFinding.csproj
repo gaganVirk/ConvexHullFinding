@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDFBF30D-753B-45F9-BDA3-C5E3C35C5011}</ProjectGuid>
+    <ProjectGuid>{8829CFA5-8115-4CFF-A428-E8BACDFBD403}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ConvexHullFinding</RootNamespace>
     <AssemblyName>ConvexHullFinding</AssemblyName>
@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
