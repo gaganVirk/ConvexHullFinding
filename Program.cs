@@ -19,16 +19,15 @@ namespace ConvexHullFinding
             List<Point> hull = new List<Point>();
             Point pivot = new Point(int.MaxValue, int.MaxValue);
 
-            string line = Console.ReadLine();
-            int dataSet = int.Parse(line);
-
+            int dataSet = int.Parse(Console.ReadLine());
+                                                                  
             for(int j = 0; j < dataSet; j++)
             {
-                line = Console.ReadLine();
                 int n = int.Parse(Console.ReadLine());
                 Console.WriteLine("N: {0}", n);
                 for (int i = 0; i < n; i++)
                 {
+                    string line = Console.ReadLine();
                     string[] vertices = line.Split(' ');
 
                     int v1 = int.Parse(vertices[0]);
@@ -54,8 +53,6 @@ namespace ConvexHullFinding
 
             }
 
-
-
             points.Sort(new Rad(pivot));
             Console.WriteLine("Pivot is" +pivot);
 
@@ -75,10 +72,10 @@ namespace ConvexHullFinding
             Console.SetIn(stdIn);
             Console.ReadLine();
 
-            Point LowestYThenLowestX(List<Point> points)
+            Point LowestYThenLowestX(List<Point> point)
             {
-                int lowestY = points.Min(m => m.Y);
-                var lowYs = points.Where(m => (m.Y == lowestY));
+                int lowestY = point.Min(m => m.Y);
+                var lowYs = point.Where(m => (m.Y == lowestY));
                 if (lowYs.Count() > 1)
                 {
                     int lowestX = lowYs.Min(m => m.X);
